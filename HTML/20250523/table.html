@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>정산표</title>
+        <style>
+            table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 30px auto;
+            font-family: Arial, sans-serif;
+            }
+            caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            }
+            th, td {
+            border: 1px solid #888;
+            padding: 10px;
+            text-align: center;
+            }
+            th {
+            background-color: #e9ecef;
+            }
+            tbody th {
+            background-color: #f8f9fa;
+            }
+            tfoot td {
+            font-weight: bold;
+            background-color: #f1f3f5;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>정산표</caption>
+            <thead>
+            <tr>
+                <th scope="col">참석자</th>
+                <th scope="col">밥집</th>
+                <th scope="col">술집 1차</th>
+                <th scope="col">술집 2차</th>
+                <th scope="col">총 합계</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">고길동</th>
+                <td>10,000원</td>
+                <td>20,000원</td>
+                <td>15,000원</td>
+                <td>45,000원</td>
+            </tr>
+            <tr>
+                <th scope="row">신형만</th>
+                <td>10,000원</td>
+                <td>20,000원</td>
+                <td>15,000원</td>
+                <td>45,000원</td>
+            </tr>
+            <tr>
+                <th scope="row">호머 심슨</th>
+                <td>10,000원</td>
+                <td>20,000원</td>
+                <td>0원</td>
+                <td>30,000원</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td>총 합계</td>
+                <td>30,000원</td>
+                <td>60,000원</td>
+                <td>30,000원</td>
+                <td>120,000원</td>
+            </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

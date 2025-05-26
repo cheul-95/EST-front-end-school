@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>table</title>
+        <style>
+        table {
+            border-collapse: collapse;
+            border: 3px solid #000;
+            table-layout: fixed;
+            width: 100%;
+        }
+    
+        caption {
+            caption-side: bottom;
+            margin-top: 20px;
+        }
+    
+        th,
+        td {
+            border: 1px solid #000;
+            padding: 6px 20px;
+        }
+    
+        th {
+            background-color: #eee;
+        }
+    
+        td {
+            text-align: center;
+        }
+    
+        tfoot {
+            font-weight: bold;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- 이곳에 작성해보세요 -->
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col" id="gubun">구분</th>
+                    <th scope="col" id="kr-history-area" rowspan="2">한국사 영역</th>
+                    <th scope="col" id="kr-language-area">국어 영역</th>
+                    <th scope="col" id="math-area">수학 영역</th>
+                    <th scope="col" id="english-area" rowspan="2">영어 영역</th>
+                    <th scope="col" id="inquiry-area" colspan="2">탐구 영역</th>
+                    <th scope="col" id="second-lang-area">제 2 외국어 / 한문 영역</th>
+                </tr>
+                <tr>
+                    <th scope="col" id="optional-subject">선택 과목</th>
+                    <th scope="col" id="speaking-writing">화법과 작문</th>
+                    <th scope="col" id="probability-statistics">확률과 통계</th>
+                    <th scope="col" id="ethics-life">생활과 윤리</th>
+                    <th scope="col" id="earth-science1">지구과학1</th>
+                    <th scope="col" id="german">독일어</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th id="standard-score" scope="row">표준 점수</th>
+                    <td rowspan="2" headers="standard-score kr-history-area"></td>
+                    <td headers="standard-score kr-language-area speaking-writing">131</td> 
+                    <td headers="standard-score math-area probability-statistics">137</td>
+                    <td headers="standard-score english-area" rowspan="2"></td>
+                    <td headers="standard-score inquiry-area ethics-life">53</td> 
+                    <td headers="standard-score inquiry-area earth-science1">64</td>    
+                    <td headers="standard-score second-lang-area german"rowspan="2"></td>
+                </tr>
+                <tr>
+                    <th id="percentile" scope="row">백분위</th>
+                    <td headers="percentile kr-language-area speaking-writing">93</td> 
+                    <td headers="percentile math-area probability-statistics">95</td>
+                    <td headers="percentile inquiry-area ethics-life">75</td> 
+                    <td headers="percentile inquiry-area earth-science1">93</td>    
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th id="rank" scope="row">등급</th>
+                    <td headers="rank kr-history-area">2</td>
+                    <td headers="rank  kr-language-area speaking-writing">2</td> 
+                    <td headers="rank math-area probability-statistics">2</td> 
+                    <td headers="rank  english-area">1</td> 
+                    <td headers="rank inquiry-area ethics-life">1</td> 
+                    <td headers="rank inquiry-area earth-science1">2</td> 
+                    <td headers="rank second-lang-area german">2</td>     
+                </tr>    
+            </tfoot>
+            <caption>
+                2023 학년도 대학수능능력시험 성적통지표
+            </caption>
+        </table>
+    </body>
+</html>

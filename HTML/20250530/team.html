@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팀 활동</title>
+</head>
+<body>
+    
+    <form action="" method="" enctype="multipart/form-data" >
+        <!--  -->
+        <div>
+            <label for="id">아이디</label>
+            <input type="text" id="id"  >
+        </div>
+        <div>
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" required placeholder="※ 특수문자 포함 필수">
+        </div>
+        <!--  -->
+        <label for="birthday">생일</label><br>
+        <input type="date" id="birthday" name="birthday" required /><br>
+        <label for="profile">프로필 이미지 : </label><br>
+        <input type="file" id="profile" name="profile">
+        <!--  -->
+            <select name="mobileCarrier" required>
+                <option value="SKT" checked>SKT</option>
+                <!-- SKT가 디폴트로 선택돼있어서 checked를 작성 -->
+                <option value="KT">KT</option>
+                <option value="etc">알뜰폰</option>
+                <!-- SKT는 통신사기에, 다른 통신사 선택지들 추가함 -->
+            </select>
+            <!-- drop-down 형식이기에 위와 같은 형식으로 작성 -->
+
+            <br />
+        <label for="phoneNumber">연락처</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" />
+        <!--  -->
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" id="male" value="male" />
+            <label for="male">남성</label>
+            <input type="radio" name="gender" id="female" value="female" />
+            <label for="female">여성</label>
+        </fieldset>
+        <fieldset>
+            <legend>사용 기술</legend>
+            <label for="html">HTML</label>
+            <input type="checkbox" name="language" id="html" value="html" />
+            <label for="css">CSS</label>
+            <input type="checkbox" name="language" id="css" value="css" />
+            <label for="JavaScript">JavaScript</label>
+            <input type="checkbox" name="language" id="JavaScript" value="JavaScript"/>
+            <label for="Python">Python</label>
+            <input type="checkbox" name="language" id="Python" value="Python"/>
+            <label for="Django">Django</label>
+            <input type="checkbox" name="language" id="Django" value="Django"/>
+        </fieldset>
+        <!--  -->
+        <label for="browser">사용하는 브라우저를 선택하세요</label>
+        <br />
+        <input list="browsers" id="browser" name="browser" />
+        <datalist id="browsers">
+            <option value="explor"></option>
+            <option value="chrome"></option>
+            <option value="Microsoft Edge"></option>
+            <option value="네이버 웨일"></option>
+        </datalist>
+        <input type="reset" value="초기화" />
+        <input type="submit" value="제출" />
+    </form>
+</body>
+</html>

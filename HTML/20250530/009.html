@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 관련 요소들</title>
+</head>
+<body>
+    <label for="job">직업을 선택해주세요.</label>
+    <fieldset>
+        <!-- 관련된 폼 요소들을 논리적으로 그룹화 -->
+        <legend>직업</legend>
+        <select name="job" id="job">
+            <option value="">선택해주세요</option> 
+            <optgroup   label="개발자">
+                <option value="fe">front-end</option>
+                <option value="be">back-end</option>
+            </optgroup>
+            <option value="desinger">디자이너</option>
+            <option value="pm">기획자</option>
+        </select>
+    </fieldset>
+    <fieldset>
+        <legend>도시</legend>
+        <label for="city">도시 검색:</label>
+        <input list="cities" id="city" name="city" placeholder="도시 이름 입력" />
+        <!-- input select 의 장접 결합 -->
+        <datalist id="cities">
+            <option value="시흥">시흥</option>
+            <option value="울산">울산</option>
+            <option value="제주">제주</option>
+            <option value="여수">여수</option>
+        </datalist>
+    </fieldset>
+    <textarea name="" id=""></textarea>
+    <button > 
+        <img src="" alt="">
+        button
+    </button>
+    <a href="">a태그</a>
+    <input type="text">
+</body>
+</html>

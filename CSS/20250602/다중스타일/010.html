@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            button:focus {
+                background-color: aquamarine;
+            }
+
+            button:focus-visible{
+                border: solid 3px hotpink;
+            }
+            .form-group{
+                padding: 10px;
+                border: solid 2px gray;
+            }
+            /* 사용자가 특성 입력필드에 포커스를 맞출 때 전체 폼 그룹의 스타일 변경 가능 */
+            .form-group:focus-within{
+                background-color: pink;
+                border-color: hotpink;
+            }
+            button:enabled:hover{
+                background-color: lightpink;
+            }
+            button:disabled{
+                cursor: not-allowed;
+            }
+            /* 체크박스나 라디오버튼의 체크된 상태를 선택 */
+            input[type="checked"]:checked+label{
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <button>button</button>
+        <div class="form-group">
+            <label for="name">name:</label>
+            <input type="text" id="name" placeholder="이름을 알려주세요.">
+        </div>
+        <div class="button-gorup">
+            <button>submit</button>
+            <button disabled>submit</button>
+        </div>
+        <div class="checkvox-group">
+            <input type="checkbox" id="option1" name="option1">
+            <label for="option1">option1</label>
+        </div>
+    </body>
+</html>

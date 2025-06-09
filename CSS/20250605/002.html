@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .parent{
+                width: 300px;
+                background-color: gray;
+            }
+            .child{
+                width: 300px;
+                background-color: lightcoral;
+                /* width: min-content; */
+                /* width: max-content; */
+                width: fit-content;
+                /* min(max-content , max(min-cntent,길아값)) */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <div class="child">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, in aperiam? Odio, eligendi amet? Quibusdam rem error dolorem deserunt voluptates odio eveniet reprehenderit voluptatibus ipsa, quod minima, adipisci consequatur sint?</div>
+        </div>
+    </body>
+</html>

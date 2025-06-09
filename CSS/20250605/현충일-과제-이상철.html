@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>현충일 과제</title>
+        <style>
+            .box1,.box2,.box3 {
+                width: 200px;
+                height: 80px;
+                text-align: center;
+                line-height: 80px;
+                display: inline-block;
+                font-size: 30px;
+                color: white;
+                margin-left: 30px;
+                margin-bottom: 30px;
+
+            }
+            .box-list .title,.button-list .title{
+                text-align: center;
+                font-size: 30px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+            .box1{
+                border: solid 10px black;
+                background-color: rgb(88, 99, 110);
+                box-shadow: inset  10px 10px 0 0px rgb(119 ,133,146);
+            }
+            .box2{
+                border: dashed 10px rgb(230, 230, 230);
+                border-radius: 50px;
+                background: linear-gradient(90deg, 
+                rgba(118, 75, 162, 0.7) 50%,
+                rgba(20, 56, 214, 0.8)) 50%;
+                background-size: 100% 100%;
+                background-clip: padding-box;
+            }
+            .box3{
+                border: solid 5px rgb(176, 196, 222);
+                border-radius: 0px 50px 50px 50px;
+                color: black;
+                box-shadow: rgba(0, 0, 0, 0.1) 20px 20px 20px -12px;
+            }
+
+            .button-btn:disabled,.yes-btn:disabled,.button-btn:disabled{
+                color: #4A5568;
+            }
+            .button-btn{
+                width: 88px;
+                height: 32px;
+                border-width: 1px;
+                background: #343F50;
+                border: 1px solid #1A202C;
+                box-shadow: 2px 2px 0px 0px #FFFFFF1A inset;
+                color: #CBD5DF;
+            }
+            .button-btn:hover,.button-btn:active{
+                color: #FFF;
+                text-decoration: underline;
+            }
+            .yes-btn{
+                width: 88px;
+                height: 32px;
+                border-width: 1px;
+                background: #343F50;
+                border: 1px solid #1A202C;
+                box-shadow: 2px 2px 0px 0px #FFFFFF1A inset;
+                color: #439AFF;
+            }
+            .yes-btn:hover ,.yes-btn:active{
+                color: #FFF;
+                background: #439AFF;
+                border: 1px solid #439AFF;
+                box-shadow: 2px 2px 0px 0px #FFFFFF33 inset;
+                text-decoration: underline;
+            }
+            .yes-btn:active{
+                box-shadow: 2px 2px 0px 0px #00000033 inset;
+            }
+            .del-btn{
+                width: 88px;
+                height: 32px;
+                border-width: 1px;
+                background: #343F50;
+                border: 1px solid #1A202C;
+                box-shadow: 2px 2px 0px 0px #FFFFFF1A inset;
+                color: #EB5757;
+            }
+            .del-btn:hover ,.del-btn:active{
+                color: #FFF;
+                background: #EB5757;
+                border: 1px solid #EB5757;
+                box-shadow: 2px 2px 0px 0px #FFFFFF33 inset;
+                text-decoration: underline;
+            }
+            .del-btn:active{
+                box-shadow: 2px 2px 0px 0px #00000033 inset;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box-list">
+            <div class="title">박스 과제</div>
+            <div class="box1">Hello 👋</div>
+            <div class="box2">Hello 👋</div>
+            <div class="box3">Hello 👋</div>
+        </div>
+        <div class="button-list">
+            <div class="title">버튼 과제</div>
+            <button class="button-btn">Button</button>
+            <button class="yes-btn">Yes</button>
+            <button class="del-btn">Del</button>
+        </div>
+    </body>
+</html>

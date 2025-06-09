@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div{
+                width: 1000px;
+                height: 1000px;
+                border: dotted 30px black;
+                padding: 50px;
+                background-color: aqua;
+                
+                /* 배경이 어디까지 차지할것인지 */
+                /* 기본값 . border 영역까지 배경이 차지 */
+                /* background-clip: border-box; */
+                /* padding 영역까지 배경이 차지 */
+                /* background-clip: padding-box; */
+                /* content 영역까지 배경이 차지 */
+                /* background-clip: content-box; */
+
+                /* 백그라운드 오리진 */
+                background-image: url('./images/bg.png');
+                background-repeat: no-repeat;
+                /* 이미지의 시작 점을 조절  */
+                /* border영역의 좌측상단  */
+                background-origin: border-box;
+                /* padding영역의 좌측 상단 */
+                background-origin: padding-box;
+                /* content영역의 좌측 상단 */
+                background-origin: content-box;
+                /* 아래 속성이 설정된 경우 background-origin속성은 무시됨 */
+                background-attachment: fixed;  
+                
+                background: linear-gradient(90deg,lightcoral,lightblue);
+                background: linear-gradient(45deg, 
+                rgba(65, 93, 219, 0.8) 0%, 
+                rgba(118, 75, 162, 0.7) 50%, 
+                rgba(255, 107, 107, 0.6) 100%);
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        </div>
+    </body>
+</html>

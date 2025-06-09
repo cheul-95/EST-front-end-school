@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .relative{
+               border: solid 3px palevioletred;
+                position: relative;
+                top: 20px;
+                left: 20px;
+            }
+            .normal{
+                background-color: lightgreen;
+            }
+            .absolute{
+                background-color: lightblue;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+            .fixed{
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: lightseagreen;
+                position: fixed;
+                bottom: 20px;
+                right: 20px
+            }
+            .sticky{
+                height: 50px;
+                background-color: lightgoldenrodyellow;
+                position: sticky;
+                top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="relative">relative
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore voluptatibus dolor nihil illo! Porro excepturi nemo distinctio in nobis deleniti facilis, non omnis tenetur. Dolorum quo molestias vel veritatis omnis?
+            Repellendus, esse nobis ex voluptatem eveniet placeat culpa a voluptatum quam error amet quos aliquam consectetur ullam numquam itaque quia aperiam magnam! Cupiditate natus possimus vel soluta illo ratione sapiente.
+            Veritatis corporis architecto vero. Hic voluptatem excepturi, quo officiis vel maiores impedit odit, fugit quidem eum corporis voluptatum accusantium praesentium laborum? Assumenda laboriosam ullam pariatur, similique aspernatur voluptas deleniti labore.
+             <div class="sticky">absolute</div>
+            A laudantium amet veniam? Sunt enim sit incidunt odio optio, modi minima commodi magnam ad autem non inventore vitae fugiat nihil nostrum quaerat eaque dolore, vel natus culpa error explicabo.
+            Quis doloremque ea aspernatur recusandae voluptatum. Ipsam est iure sit ducimus sed facere totam, assumenda ratione voluptatem, iusto, quidem eos! Nostrum sint delectus maxime exercitationem earum, officiis maiores harum ex.
+            <div class="absolute">absolute</div>
+        </div>
+        <div class="normal">normal flow</div>
+        <div class="fixed">fixed</div>
+    </body>
+</html>

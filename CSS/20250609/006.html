@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .container{
+                border: solid 3px black;
+            }
+
+            .clearfix::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            img{
+                width: 100px;
+                float: left;
+            }
+
+            h2{
+                float: right;
+            }
+
+            p{
+                clear: right;
+                clear: left;
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container clearfix">
+            <h2>hello</h2>
+            <img src="./images/weniv-binky.png" alt="">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis recusandae ex quod? Corporis neque, tenetur necessitatibus eligendi placeat quam dolore voluptate quis, facilis asperiores, vitae dolorum porro adipisci delectus blanditiis?
+            </p>
+        </div>
+        
+    </body>
+</html>

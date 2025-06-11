@@ -1,0 +1,84 @@
+@font-face {
+  font-family: "SpoqaHanSansNeo-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root{
+    --main-font : "SpoqaHanSansNeo-Regular";
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+* {
+    font-size: 12px;
+    line-height: 100%;
+}
+.container{ 
+    border: 1px solid #DBDBDB ;
+    margin: 30px 25px;
+    width: 350px;
+    height: 140px;
+    border-radius: 5px;
+}
+.wrap-content{
+    margin: 0px 16px;
+}
+.container p{
+    font-family: var(--main-font);
+    font-weight: 400;
+    color: #000000;
+    margin-top: 19px;
+}
+.container .login-link { 
+    width: 318px;
+    height: 40px;
+    background: #711BFF;
+    border-radius: 5px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .login-link *{
+    height: 18px;
+} 
+.container .login-link span{
+    font-family: var(--main-font);
+    font-weight: 500;
+    color: white;
+    line-height : 18px;
+}
+nav{
+    margin-top: 16px;
+} 
+nav img{
+    width: 16px;
+    height: 16px;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+li{
+    font-family: var(--main-font);
+    font-weight: 400;
+    color: #767676;
+    display: flex;
+    align-items : center;
+} 
+.icon-lock,.icon-user{
+    margin-right: 4px;
+}
+nav span{
+    margin: 0px 4px;   
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .container{
+                width: 600px;
+                height: 600px;
+                display: grid;
+                grid-template-columns: repeat(3,100px);
+                grid-template-rows: repeat(3,100px);
+            }
+            .container > div{
+                width: 50px;
+                height: 50px;
+            }
+            .item1{
+                background-color: lightblue;
+                align-self: center  ; /* 수직 정렬 */
+                justify-self: center   ; /* 수평 정렬 */
+
+                place-self: center end;  /* 수직, 수평 정렬 */
+            }
+            .item2{
+                background-color: lightcoral;
+                order: 6;
+            }
+            .item3{
+                background-color: lightcyan;
+                order: 5;
+            }
+            .item4{
+                background-color: lightgoldenrodyellow;
+                order: 4;               
+            } 
+            .item5{
+                background-color: lightgray;
+                order: 3;
+            } 
+            .item6{
+                background-color: lightsalmon;
+                order: 2;
+            }  
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1">item1</div>
+            <div class="item2">item2</div>
+            <div class="item3">item3</div>
+            <div class="item4">item4</div>
+            <div class="item5">item5</div>
+            <div class="item6">item6</div>
+        </div>
+    </body>
+</html>

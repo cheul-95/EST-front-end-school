@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>시계 실습</title>
+        <style>
+            @keyframes move {
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }                    
+            }
+            body {
+                background: #f0f4f8;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .clock {
+                width: 300px;
+                height: 300px;
+                border-radius: 70px;
+                background:#3B5EDE;
+                position: relative;
+            }
+
+            .hand {
+                position: absolute;
+                top : 50%;
+                left : 50%;
+                height: 8px;
+                animation-name: move;
+                transform: rotate(90deg);
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                transform-origin :left;
+            }
+
+            .second-hand {
+                background: black;
+                width: 40%;
+                animation-duration: 6s;
+            }
+
+            .min-hand {
+                background:#52c41a ;
+                width: 32.5%;
+                animation-duration: 12s;
+            }
+
+            .hour-hand {
+                background: red;
+                width: 25%;
+                animation-duration: 18s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="clock">
+            <div class="clock-face">
+                <div class="hand hour-hand"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+    </body>
+</html>

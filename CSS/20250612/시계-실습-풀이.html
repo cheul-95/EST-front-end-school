@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>시계 풀이</title>
+        <style>
+            @keyframes move-watch {
+                0%{
+                    transform: rotate(0deg);
+                }
+                100%{
+                    transform: rotate(360deg);
+                }
+            }
+            .container{
+                width: 400px;
+                height: 400px;
+                border: solid 20px orange;
+                border-radius: 50%;
+                position: relative;
+            }
+            .container div{
+                position: absolute;
+                width: 10px;
+                left: 50%;
+                animation-name: move-watch;
+                animation-iteration-count: infinite;
+                transform-origin: bottom;
+                animation-timing-function: linear;
+            }
+            .sec{
+                height: 150px;
+                top:50px;
+                animation-duration: 15s;
+                background-color: black;
+            }
+            .min{
+                height: 120px;
+                top:80px;
+                animation-duration: 30s;
+                background-color: red;
+            }
+            .hour{
+                height: 90px;
+                top:110px;
+                animation-duration: 60s;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sec"></div>
+            <div class="min"></div>
+            <div class="hour"></div>
+        </div>
+    </body>
+</html>

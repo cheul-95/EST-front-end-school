@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>스프라이트 이미지 </title>
+        <style>
+            @keyframes move-lion {
+                0%{
+                    transform: translateX(0px);
+                }
+                100%{
+                    transform: translateX(-2000px);
+                }
+            }
+            @keyframes move-build {
+                0%{
+                    transform: translateX(0px);
+                }
+                100%{
+                    transform: translateX(-3842px);
+                }
+            }
+            .liom-wrap{
+                width: 280px;
+                overflow: hidden;
+            }
+            .lion-container {
+                width: 2000px;
+                height: 340px;
+                background: url("./images/licat.png") ;
+                animation-name: move-lion;
+                animation-iteration-count: infinite;
+                animation-timing-function: steps(7);
+                animation-duration: 1s;
+            }
+            .build-wrap{
+                width: 113px;
+                overflow: hidden;
+                margin: 30px;
+            }
+            .build-container {
+                width: 3842px;
+                height: 176px;
+                background: url("./images/building1.png") ;
+                animation-name: move-build;
+                animation-iteration-count: infinite;
+                animation-timing-function: steps(34);
+                animation-duration: 5s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="liom-wrap">
+                <div class="lion-container">
+                </div>
+            </div>
+            <div class="build-wrap">
+                <div class="build-container">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

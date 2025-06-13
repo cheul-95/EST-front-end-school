@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>카드 회전 시키기</title>
+        <style>
+            @keyframes rotate {
+                from {
+                    transform: rotateY(0deg);
+                }
+                to {
+                    transform: rotateY(360deg);
+                }
+            }
+
+            body {
+                perspective: 400cm;
+            }
+            .container {
+                margin-top: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform-style: preserve-3d;
+                animation: rotate 5s linear infinite;
+                position: relative;
+            }
+            .item {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border: 1px solid #eee;
+                border-radius: 2px;
+                backface-visibility: hidden;
+            }
+
+            img {
+                height: 100%;
+                aspect-ratio: 1 / 1;
+            }
+
+            .item1 {
+                  transform: rotateY(0deg) translateZ(115px); 
+            }
+            .item2 {
+                transform: rotateY(calc(51.43deg * 1)) translateZ(110px); 
+            }
+            .item3 {
+                transform: rotateY(calc(51.43deg * 2)) translateZ(115px);
+            }
+            .item4 {
+                transform: rotateY(calc(51.43deg * 3)) translateZ(115px);
+            }
+            .item5 {
+                transform: rotateY(calc(51.43deg * 3)) translateZ(115px);
+            }
+            .item6 {
+                transform: rotateY(calc(51.43deg * 5))  translateZ(115px);
+            }
+            .item7 {
+                transform: rotateY(calc(51.43deg * 6)) translateZ(115px);
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item item1">
+                <img src="./images/ev.png" alt="" />
+            </div>
+            <div class="item item2">
+                <img src="./images/jammanbo.png" alt="" />
+            </div>
+            <div class="item item3">
+                <img src="./images/mazayoung.png" alt="" />
+            </div>
+            <div class="item item4">
+                <img src="./images/mobugi.png" alt="" />
+            </div>
+            <div class="item item5">
+                <img src="./images/nyaong.png" alt="" />
+            </div>
+            <div class="item item6">
+                <img src="./images/pulin.png" alt="" />
+            </div>
+            <div class="item item7">
+                <img src="./images/weirdseed.png" alt="" />
+            </div>
+        </div>
+    </body>
+</html>

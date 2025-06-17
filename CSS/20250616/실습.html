@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>미디어 쿼리 실습</title>
+        <style>
+            @import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+            .container{
+                margin: calc((100vh / 2) - 290px) auto ;
+                max-width: 1200px;
+                height: 580px;
+                display: grid;
+                grid-template-columns: 1fr 486px;
+                grid-template-areas: 
+                    "text-wrap content-img1" 
+                    "text-wrap content-img2";
+                word-break: keep-all;
+            }
+            .text-wrap {
+                grid-area: text-wrap;
+                font-family: Spoqa Han Sans Neo;
+                font-size: 70px;
+                line-height: 100%;
+                vertical-align: middle;
+            }
+            .content-text1{
+                font-weight: 400;
+                margin-bottom: 20px;
+                color: #121314;
+                
+            }
+            .content-text1 span{
+                font-weight: 700;
+            }
+            .content-text2{
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 30px;
+                width: 100%;
+                max-width: 360px;
+                height: 60px;
+                color: #47494D;
+            }
+            .content-text2 span{
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+            }
+            .content-img1{
+                grid-area: content-img1;
+            }
+            .content-img2{
+                grid-area: content-img2;
+            }
+            .content-img1,.content-img2{
+                width: 100%;
+                max-width: 486px;
+                color: white;
+                position: relative;
+            }
+            .content-img1 img,.content-img2 img{
+                border-radius: 10px;
+            }
+            .content-img1 span,.content-img2 span{
+                position: absolute;
+                top : 40px;
+                left: 40px;
+                font-family: Spoqa Han Sans Neo;
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 100%;
+                vertical-align: middle;
+            }
+            .content-img1 .content a,.content-img2 .content a{
+                position: absolute;
+                bottom : 30px;
+                right: 30px;
+                font-weight: 400;
+                font-size: 16px;
+                color: white;
+                text-decoration: unset;
+            }
+            .content-img1 .content a::after,.content-img2 .content a::after {
+                position: absolute;
+                bottom : 5px;
+                right: -8px;
+                content: "";
+                transform: rotate(-45deg);
+                width: 8px;
+                height: 8px;
+                border-right: 2px solid currentColor;
+                border-bottom: 2px solid currentColor;
+            }
+
+            @media screen and (min-width :768px) and (max-width :1124px) {
+                .container{
+                    margin: 100px 30px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: 
+                    "text-wrap text-wrap"
+                    "content-img1 content-img2";
+                }
+                .text-wrap{
+                    max-width: 620px;
+                    margin-bottom: 60px;
+                }
+                .content-img1 img,.content-img2 img{
+                    width: 100%;
+                    min-width: 334px;
+                    max-width: 486px;
+                    margin-right: 20px;
+                }
+                .content-img1{
+                    padding-right: 10px;
+                }
+                .content-img2{
+                    padding-left: 10px;
+                }
+                .content-img1 span,.content-img2 span{
+                    position: absolute;
+                    top : 30px;
+                    left: 30px;
+                    font-size: 24px;
+                }
+                .content-img1 .content a,.content-img2 .content a{
+                    position: absolute;
+                    bottom: 20px; 
+                    right: 30px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: white;
+                    text-decoration: unset;
+                }
+                .content-img1 .title a::after,.content-img2 .title a::after {
+                    top: 8.5px;
+                }
+            }
+            @media screen and (max-width :768px) {
+                .container{
+                    margin: 100px 16px;
+                    grid-template-columns: 1fr ;
+                    grid-template-areas: 
+                    "text-wrap"
+                    "content-img1"
+                    "content-img2";
+                }
+                .text-wrap{
+                    max-width: 320px;
+                    margin-bottom: 40px;
+                    font-size: 36px;
+                }
+                .content-text1{
+                    margin-bottom: 14px;
+                }
+                .content-text2,.content-text2 span{
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+                .content-img1,.content-img2{
+                    max-width: 356px;
+                }
+                .content-img1 img,.content-img2 img{
+                    width: 100%;
+                    max-width: 356px;
+                }
+                .content-img1 span,.content-img2 span{
+                    top: 30px;
+                    left: 30px;
+                    font-size: 20px;
+                }
+                .content-img1 .content a,.content-img2 .content a{
+                    bottom: 20px; 
+                    right: 30px;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+                <div class="text-wrap">
+                    <div class="content-text1">위니브에서<br>
+                        <span>함께 콘텐츠 제작하실 분을 모십니다.</span>
+                    </div>
+                    <div class="content-text2">위니브<span>는 ICT 연구 및 (코딩)교육 기관이며 다양한 사회 공헌 활동을 하고 있습니다.</span></div>
+                </div>
+                <div class="content-img1">
+                    <img src="./Rectangle 2.png" alt="">
+                    <div class="content">
+                        <span class="title">IT 교육 영상 콘텐츠</span>
+                        <a href="#">바로가기</a>
+                    </div>
+                </div>
+                <div class="content-img2">
+                    <img src="./Rectangle 3.png" alt="">
+                    <div class="content">
+                        <span class="title">IT 서적</span>
+                        <a href="#">바로가기</a>  
+                    </div>
+                </div>
+        </div>
+        
+    </body>
+</html>

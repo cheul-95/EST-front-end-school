@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>20250616-미디어커리-과제 </title>
+        <link rel="stylesheet" href="./css/reset.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <style>
+            @font-face {
+                font-family: 'Pretendard-Regular';
+                src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+                font-weight: 400;
+                font-style: normal;
+            }
+            html {
+                font-size: 10px;
+                font-family: 'Pretendard-Regular', sans-serif;
+            }
+            strong{
+                font-weight: 700;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+            }
+            header h1 {
+                margin: 18px 20px;
+            }
+            .header-right {
+                display: flex;
+                margin: 14px 16px;
+            }
+            .header-right input{
+                border: unset;
+            }
+            .search-wrap{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 32rem;
+                height: 42px;
+                border-radius: 10px;
+                background: var(--White-to-Dark-W-Gray-Lv1, #F3F5FA);
+                padding: 9px;
+            }
+            .search-wrap img{
+                width: 24px;
+                height: 24px;
+                margin-left: 16px;
+            }
+            .search-wrap input{
+                width: 100%;
+                outline: none;
+                background: var(--White-to-Dark-W-Gray-Lv1, #F3F5FA);
+            }
+            .slide{
+                width: 100%;
+                height: 400px;
+                background: #B6F187;
+                display: flex;
+                justify-content: center;
+            }
+            .slide-text-wrap h2{
+                margin-top: 8rem;
+                width: 10.7rem;
+                padding: 4px;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                background-color: #FFFFFF;
+                color: #2E6FF2;
+            }
+            .slide-text-wrap h3{
+                margin-top: 1.2rem;
+                width: 35.2rem;
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 56px;
+            }
+            .slide-text-wrap p{
+                margin-top: 1.2rem;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 22px;
+            }
+            .class{
+                margin-top: 8rem;
+                display: flex;
+                justify-content: center;
+            }
+            .class-wrap{
+                display: flex;
+                justify-content: center;
+            }
+            .class-text-wrap{
+                margin: 0px 32px;
+                max-width: 38rem;
+            }
+            .class-text-wrap span{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 22px;
+                color: var(--White-to-Dark-W-Gray-Lv3, #8D9299);
+                margin-bottom: 8px;
+            }
+            .class-text-wrap h2{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 32px;
+                color: var(--White-to-Dark-W-Surface, #121314);
+                margin-bottom: 12px;
+            }
+            .class-text-wrap .price{
+                display: inline;
+                color:  var(--White-to-Dark-W-Primary, #2E6FF2);
+            }
+            .class-text-wrap .price-wrap{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 22px;
+                margin-bottom: 16px;
+            }
+
+            .class-text-wrap p{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                color: var(--White-to-Dark-W-Gray-Lv4, #47494D);
+                margin-bottom: 24px;
+            }
+            .class-text-wrap .left-btn{
+                display: inline;
+                background-color:  var(--White-to-Dark-W-Primary, #2E6FF2);
+                width: 11rem;
+                border-radius: 10px;
+                padding-top: 11px;
+                padding-right: 20px;
+                padding-bottom: 11px;
+                padding-left: 20px;
+                margin-right: 12px;
+                border: solid 1px var(--White-to-Dark-W-Primary, #2E6FF2);
+                color: white;
+            }
+            .class-text-wrap .right-btn{
+                display: inline;
+                border: 1px solid var(--White-to-Dark-W-Gray-Lv2, #D9DBE0);
+                width: 11rem;
+                border-radius: 10px;
+                padding-top: 11px;
+                padding-right: 20px;
+                padding-bottom: 11px;
+                padding-left: 20px;
+                color: var(--White-to-Dark-W-Gray-Lv3, #8D9299);
+            }
+            footer{
+                margin-top: 29rem;
+                background: var(--White-to-Dark-W-Gray-Lv1, #F3F5FA);
+                bottom: 0px;
+                padding: 6rem 36.5rem;
+            }
+            .footer-wrap{
+                max-width: 119rem;
+            }
+
+            .copyright{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                height: 20px;
+                margin-left: 16px;
+                color: var(--White-to-Dark-W-Gray-Lv3, #8D9299);
+            }
+            .footer-wrap1{
+                display: flex;
+                text-align: center;
+                align-items: center;
+                margin-bottom: 22px;
+            }
+            .footer-wrap2{
+                display: flex;
+                justify-content: space-between;
+                max-width: 119rem;
+                width: 100%;
+            }
+            .footer-wrap2 address{
+                width: 638px;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 16px;
+                color:  var(--White-to-Dark-W-Gray-Lv4, #47494D);
+                align-content: center;
+            }
+            .footer-wrap2 img{
+                height: 32px;
+            }
+            @media screen and (max-width :1124px){
+                
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <img src="./images/wenivooks-logo-2.png" alt="">   
+                <span class="sr-only">위니비 로고</span>
+            </h1>
+            <div class="header-right">
+                <img src="./images/icon-btn-on.png" alt="">
+                <div class="search-wrap">
+                    <input type="text">
+                    <img src="./images/icon-Search.png" alt="">
+                </div> 
+            </div>
+        </header>
+        <main>
+            <section class="slide">
+                <div class="slide-text-wrap">
+                    <h2>위니북스 새/소/식</h2>
+                    <h3>신규 온라인 강의 출시!</h3>
+                    <p>위니브와 함께하는 파이썬 완전 정복 온라인 강의가 출시되었습니다.<br>
+                        <strong>얼리버드 20% 할인 혜택을 놓치지 마세요!</strong></p>
+                </div>
+                <img src="./images/main-banner-img.png" alt="">
+            </section>
+            <section class="class">
+                <div class="class-wrap">
+                    <img src="./images/Frame 40.png" alt="">
+                    <div class="class-text-wrap">
+                        <span>주식회사 위니브 | 출판사: 골든래빗</span>
+                        <h2>위니브와 함께하는 파이썬 완전 정복</h2>
+                        <div class="price-wrap"> 종이책 <div class="price">24,000원</div></div>
+                        <p>이 아이에게 한글과 영어 단어를 가르치고 싶어 문에는 문, door라고 포스트잇을 붙여 놓았어요. 변수는 이 포스트잇과 비슷합니다. 담겨져 있는 실체는 변하지 않아요.</p>
+                        <div class="btn-wrap">
+                            <button type="button" class="left-btn">Web-book</button>
+                            <button type="button" class="right-btn">온라인 강의</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="class-wrap">
+                    <img src="./images/Frame 40.png" alt="">
+                    <div class="class-text-wrap">
+                        <span>주식회사 위니브 | 출판사: 골든래빗</span>
+                        <h2>위니브와 함께하는 파이썬 완전 정복</h2>
+                        <div class="price-wrap"> 종이책 <div class="price">24,000원</div></div>
+                        <p>이 아이에게 한글과 영어 단어를 가르치고 싶어 문에는 문, door라고 포스트잇을 붙여 놓았어요. 변수는 이 포스트잇과 비슷합니다. 담겨져 있는 실체는 변하지 않아요.</p>
+                        <div class="btn-wrap">
+                            <button type="button" class="left-btn">Web-book</button>
+                            <button type="button" class="right-btn">온라인 강의</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-wrap">
+                    <div class="footer-wrap1">
+                        <img src="./images/wenivooks-logo-2 (1).png" alt="" class="footer-logo" >
+                        <div class="copyright">Copyright © 2023 WENIV All Rights Reserved</div>
+                    </div>
+                    <div class="footer-wrap2">
+                        <address>(주)위니브  |  대표:  이호준  |  사업자 번호:  546-86-01737  |  정보통신업  |  주소: 제주 제주시 첨단로 330 세미양빌딩 A동 1층 106호</address>
+                        <img src="./images/Frame 16.png" alt="">
+                    </div>
+                </div>
+        </footer>
+    </body>
+</html>

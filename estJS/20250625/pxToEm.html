@@ -50,6 +50,7 @@
             background: #ffffff3b;
             border: 1px solid white;
             padding-left: 25px;
+            color: white;
         }
         button{
             width: 100%;
@@ -75,24 +76,24 @@
                 <div>
                     <div>
                         <p>기본 폰트(px)</p>
-                        <input type="text" id="px" >
+                        <input type="text" id="defaultpx" >
                     </div>
                     <div>
                         <p>원하는 폰트 px값</p>
-                        <input type="text" id="em" >
+                        <input type="text" id="calcpx" >
                     </div>               
                 </div>
                 <button type="button" onclick="pxToEm()">em 값 계산</button>
-                <div class="result"><span id="input-em"></span><strong id="result"></strong></div>
+                <div class="result"><span id="input-px"></span><strong id="result"></strong></div>
         </div>
     </body>
     <script>
         function pxToEm(){
-            const px = Number( document.getElementById("px").value ); 
-            const em = Number( document.getElementById("em").value ); 
+            const defaultpx = Number( document.getElementById("defaultpx").value ); 
+            const calcpx = Number( document.getElementById("calcpx").value ); 
 
-            document.getElementById("input-em").innerHTML = `${px}px=`;
-            document.getElementById("result").innerHTML = `${em}em`;
+            document.getElementById("input-px").innerHTML = `${defaultpx}px=`;
+            document.getElementById("result").innerHTML = `${calcpx/defaultpx}em`;
         }
     </script>
 </html>

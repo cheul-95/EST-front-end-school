@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello world 출력하기</title>
+    </head>     
+    <body>
+        <h1>콘솔창 찍어보기 <span>HELLO, WORLD</span></h1>
+        <h1>나는 두번쨰 H1 이야. <b>second h1</b></h1>
+        <script>
+            console.log("003");
+            console.log(document.getElementsByTagName("h1"));
+            console.log(document.getElementsByTagName("h1")[0]);
+            console.log(document.getElementsByTagName("h1")[0].textContent);
+            console.log(document.getElementsByTagName("h1")[0].innerHTML);
+            console.log(document.getElementsByTagName("h1")[1].textContent);
+            console.log(document.getElementsByTagName("h1")[1].innerHTML);
+        </script>
+
+        <h1>Javascript Console</h1>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+            <li>SCSS</li>
+        </ul>
+        <script>
+            console.log(document.getElementsByTagName("li")[2].textContent);
+            document.getElementsByTagName("li")[2].textContent ="자바스크립트<button>버튼</button>"
+            console.log(document.getElementsByTagName("li")[2].textContent);
+            document.getElementsByTagName("li")[2].innerHTML ="자바스크립트<button>버튼</button>"
+            console.log(document.getElementsByTagName("li")[2].textContent);
+        </script>
+
+        <script>
+            var strVar = 'hello';
+            let strLet = 'world';
+            const strConst = 'Ghost';
+
+            console.log(window);
+            // window에 strVar는 전역 변수가 될수없다.
+        </script>
+
+        <input type="text" name="" id="">
+        <button type="button">EM계산하기</button>
+        <script>
+            function pxToEm(target){
+                const em = target / 16;
+                console.log(`${target}px -> ${em}em`);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>bodyChangeColor</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div {
+            position: relative;
+            background-color: #00000014;
+            border: 1px solid white;
+            width: 50vw;
+            height: 50vh;
+            border-radius: 30px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <body>
+        <div>
+            <select name="SelColor" id="SelColor">
+                <option value="#F7E2E2" selected>연한 분홍색</option>
+                <option value="#61A4BC">청록색</option>
+                <option value="#5B7DB1">진한 파란색</option>
+                <option value="#1A132F">인디고</option>
+            </select>
+        </div>
+    </body>
+    <script>
+        const color = document.getElementById("SelColor");
+        // color.addEventListener("input",function(e){
+        //     document.body.style.backgroundColor = e.target.value;
+        // })
+        color.addEventListener("change",function(e){
+            document.body.style.backgroundColor = e.target.value;
+        })
+    </script>
+</html>

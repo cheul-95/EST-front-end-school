@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>bodyChangeColor</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            position: relative;
+            background-color: gray;
+            width: 50vw;
+            height: 50vh;
+            border-radius: 30px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .input-wrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        input{
+            border: none;
+            border-radius: 20px 0px 0px 20px;
+            width: 100%;
+            font-size: 20px;
+            padding-left: 10px;
+            height: 30px;
+        }
+        button{
+            border: none;
+            border-radius: 0px 20px 20px 0px;
+            width: 80px;
+            height: 30px;
+            font-size: 20px;
+        }
+        span{
+            display: inline-block;
+            border: 50%;
+            background-color: whitesmoke;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            align-self: center;
+            line-height: 120%;
+            margin: 0 15px;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <h1> Guess a Number(1~10 )</h1>
+            <div class="input-wrap">
+                <input type="number" id="input">
+                <button type="button" id="btn">클릭</button>
+            </div>
+            <p id="result"></p>
+        </div>
+    </body>
+    <script>
+        const btn = document.getElementById("btn");
+        const ranNum = Math.ceil(Math.random()*10);
+        const result =document.getElementById("result");
+        btn.addEventListener("click",function(e){
+            let input = document.getElementById("input").value;
+            if(Number(input) === ranNum){
+                result.innerHTML = `<span> ${input} </span> 정답입니다! 🎉<span> ${input} </sapn>`;
+            }else if(Number(input) >= ranNum){
+                result.innerHTML = `<span> ${input} </span> 너무 커요!`;
+            }else if(Number(input) <= ranNum){
+                result.innerHTML = `<span> ${input} </span> 너무 작아요!`;
+            }  
+        })
+    </script>
+</html>

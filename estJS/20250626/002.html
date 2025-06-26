@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>addEventListener</title>
+    </head>
+    <body>
+        <h1>버튼을 클릭하세요</h1>
+        <input type="color" id="userColor" >
+        <input type="text" id="input">
+        <button type="button" id="btn">클릭</button>
+        <p id="result"></p>
+        <script>
+            const btn = document.getElementById("btn");
+            const result =document.getElementById("result");
+            const input = document.getElementById("input");
+            const color = document.getElementById("userColor");
+            // btn.addEventListener('click', function (e){
+            //     console.log(e.target);
+            //     console.log(e.currentTarget);
+            //     result.textContent=input.value;
+            // });
+            input.addEventListener("input",function(e){
+                result.textContent = e.target.value;
+            })
+            color.addEventListener("input",function(e){
+                result.textContent = e.target.value;
+                document.body.style.backgroundColor = e.target.value;
+            })
+        </script>
+    </body>
+</html>

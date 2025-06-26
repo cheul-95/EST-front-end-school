@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- 연습버튼 -->
+        <button type="button" onclick="inputCoin(1000,3)">동전기계호출하기</button>
+        
+        <button type="button" onclick="gamePlay('바위')">바위</button>
+        <button type="button" onclick="gamePlay('가위')">가위</button>
+        <button type="button" onclick="gamePlay('보')">보</button>
+        <p id="result"></p>
+        <script>
+            //gamePlay() 가위 바위 보 시작
+            const choices = ["바위", "가위", "보"];
+            const aiChoice = choices[Math.ceil(Math.random() * choices.length)-1];
+            let result;
+            function gamePlay(userChoice){
+                if(userChoice === aiChoice){
+                    result = "비겼습니다."
+                }else if((userChoice === "바위" && aiChoice === "가위") || (userChoice === "가위" && aiChoice === "보") ||  (userChoice === "보" && aiChoice === "바위")){
+                    result = "유저 승";
+                }else if((aiChoice === "바위" && userChoice === "가위") || (aiChoice === "가위" && userChoice === "보") ||  (aiChoice === "보" && userChoice === "바위") ){
+                    result = "컴퓨터 승";
+                }
+                document.getElementById("result").textContent = `게임 결과 : ${result}`;
+            }
+            function gamePlay2(rock_paper_scissors){
+                const choices = ["바위", "가위", "보"];
+                const random = Math.ceil(Math.random() * choices.length);
+                const computerChoice = choices[random];
+                let result;
+                if (rock_paper_scissors === computerChoice) {
+                    result = "무승부";
+                } 
+                const winMap = {
+                            "바위": "가위",
+                            "가위": "보",
+                            "보": "바위"
+                        };
+                result = winMap[rock_paper_scissors] === computerChoice ? "유저 승" : "컴퓨터 승";
+                console.log(`컴퓨터 : ${computerChoice}, 유저 : ${rock_paper_scissors}`)
+                console.log(result);
+            }
+
+            function inputCoin(coin ,num=1 ){
+                // console.log(`${coin}원이 ${num}개 입금되었습니다.`);
+                console.log(`${coin*num}원이 입금되었습니다.`);
+            }
+            // inputCoin(500,3);
+            // inputCoin(100,2);
+            // inputCoin(50,3);
+        </script>
+    </body>
+</html>
+

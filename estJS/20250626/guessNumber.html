@@ -77,14 +77,16 @@
         const btn = document.getElementById("btn");
         const ranNum = Math.ceil(Math.random()*10);
         const result =document.getElementById("result");
+        const input = document.getElementById("input");
+        
         btn.addEventListener("click",function(e){
-            let input = document.getElementById("input").value;
-            if(Number(input) === ranNum){
-                result.innerHTML = `<span> ${input} </span> 정답입니다! 🎉<span> ${input} </sapn>`;
-            }else if(Number(input) >= ranNum){
-                result.innerHTML = `<span> ${input} </span> 너무 커요!`;
-            }else if(Number(input) <= ranNum){
-                result.innerHTML = `<span> ${input} </span> 너무 작아요!`;
+            const inputValue = Number(input.value);
+            if(inputValue === ranNum){
+                result.innerHTML = `<span> ${inputValue} </span> 정답입니다! 🎉<span> ${inputValue} </sapn>`;
+            }else if(inputValue >= ranNum){
+                result.innerHTML = `<span> ${inputValue} </span> 너무 커요!`;
+            }else if(inputValue <= ranNum){
+                result.innerHTML = `<span> ${inputValue} </span> 너무 작아요!`;
             }  
         })
     </script>

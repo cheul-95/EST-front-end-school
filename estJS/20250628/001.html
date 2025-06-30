@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <ul id="list">
+            <li>Html</li>
+            <li>Css</li>
+            <li>Javascript</li>
+            <li>Scss</li>
+            <li>jQuery</li>
+        </ul>
+        <script>
+            const list = document.querySelectorAll("#list li");
+            for (let i = 0; list.length - 1 >= i; i++) {
+                console.log(`${list[i].textContent}`);
+            }
+            const li = list.forEach((x) => console.log(`${x.textContent}`));
+        </script>
+    </body>
+</html>

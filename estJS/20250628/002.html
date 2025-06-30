@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>document</title>
+    </head>
+    <body>
+        <ul id="ul"></ul>
+        <script>
+            const users = ["Daniel", "Don", "donald", "Micheal", "Juliet"];
+            const ul = document.getElementById("ul");
+            users.forEach((x) => {
+                const li = document.createElement("li");
+                li.textContent = x;
+                const btn = document.createElement("button");
+                btn.textContent = "DEL";
+                li.appendChild(btn);
+                ul.appendChild(li);
+            });
+        </script>
+    </body>
+</html>

@@ -47,4 +47,4 @@ const str = "Hello";
 console.log([...str]);
 const arr = ["Today", "is", "Monday", "!"];
 // Quiz 11. arr를 문자열로 만들되 사이에 공백을 넣어서 작성하세요 'Today is Monday !'
-console.log(String(arr).replaceAll(",", " "));
+console.log(arr.join(" "));

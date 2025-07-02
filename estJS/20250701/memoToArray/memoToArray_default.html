@@ -5,7 +5,6 @@
         <title>메모를 배열에 저장하기 예제</title>
         <link rel="stylesheet" href="css/total.css" />
     </head>
-
     <body>
         <div class="memo-container">
             <h1>메모를 배열에 저장하기</h1>
@@ -25,7 +24,6 @@
             const fm = document.getElementById("memoForm");
             const input = document.getElementById("memoInput");
             const list = document.getElementById("memoList");
-
             fm.addEventListener("submit", (e) => {
                 e.preventDefault();
                 const value = input.value.trim();
@@ -35,7 +33,6 @@
                 }
                 fm.reset();
             });
-
             function renderList() {
                 list.innerHTML = "";
                 memoList.forEach((x) => {

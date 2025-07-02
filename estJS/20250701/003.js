@@ -9,7 +9,6 @@ function isValidName(name) {
         console.log(`${name}은 친구 항목에 없습니다.`);
         return false;
     }
-
     return friendIndex;
 }
 

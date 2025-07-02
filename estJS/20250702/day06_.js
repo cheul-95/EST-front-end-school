@@ -97,9 +97,9 @@ console.log("고급 1번 :", name, age);
 /**
  * 고급 2번
  */
-const sym = Symbol("id"); // 심볼 생성
-const obj5 = {}; // 빈 객체 생성
-obj[sym] = 123; // 심볼을 키로 값 할당
+const sym = Symbol("id");
+const obj5 = {};
+obj[sym] = 123;
 console.log("고급 2번 :", obj[sym]);
 /**
  * 고급 3번

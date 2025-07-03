@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/dom.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>DOM 이벤트</h1>
+            <button id="alertBtn">클릭 이벤트 (Alert)</button>
+            <div class="input-group">
+                <label for="inputBox">실시간 입력 이벤트</label>
+                <input type="text" id="inputBox" placeholder="여기에 입력..." />
+                <div id="output"></div>
+            </div>
+            <div class="color-box-label">마우스를 올려보세요</div>
+            <div id="colorBox">Hover me!</div>
+        </div>
+    </body>
+    <script>
+        document
+            .getElementById("colorBox")
+            .addEventListener("mouseenter", overHandler);
+        function overHandler(e) {
+            e.target.classList.add("active");
+            e.target.textContent = "마우스 IN";
+        }
+        document
+            .getElementById("colorBox")
+            .addEventListener("mouseleave", outHandler);
+        function outHandler(e) {
+            e.target.classList.remove("active");
+            e.target.textContent = "Hover me!";
+        }
+        document.getElementById("alertBtn").addEventListener("click", () => {
+            alert("버튼이 클릭되었어요.");
+        });
+        document
+            .getElementById("inputBox")
+            .addEventListener("input", printInput);
+        function printInput(e) {
+            const inputMsg = e.target.value;
+            document.getElementById("output").textContent =
+                "입력값 : " + inputMsg;
+        }
+    </script>
+</html>

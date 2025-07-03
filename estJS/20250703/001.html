@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/dom.css" />
+        <style>
+            .btn {
+                background-color: lightseagreen;
+            }
+            li {
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="all-container">
+            <div class="menu-container">
+                <button class="btn">
+                    <img src="./images/irangi_01.png" alt="irangi" />
+                </button>
+                <button class="btn">
+                    <img src="./images/irangi_02.png" alt="irangi" />
+                </button>
+                <button class="btn">
+                    <img src="./images/irangi_03.png" alt="irangi" />
+                </button>
+            </div>
+        </div>
+        <ul id="list">
+            <li>Apple</li>
+            <li>Mango</li>
+            <li>Banana</li>
+        </ul>
+        <p id="p">
+            Hello world
+            <span>SPAN</span>
+            <strong>STRONG</strong>
+        </p>
+        <div id="testBox">
+            <strong>STRONG</strong>
+            <em>EM</em>
+            <p>Paragraph</p>
+        </div>
+        <script>
+            const testBox = document.getElementById("testBox");
+            testBox.addEventListener("click", (e) => {
+                const isTarget = e.target.nodeName === "EM";
+                if (isTarget) {
+                    console.log("클릭");
+                }
+            });
+            const p = document.getElementById("p");
+            p.addEventListener("click", dosomething);
+            function dosomething(e) {
+                const isTarget = e.target.nodeName === "STRONG";
+                if (isTarget) {
+                    console.log("That's Strong");
+                }
+            }
+            const fruits = document.querySelector("#list");
+            fruits.addEventListener("click", (e) => {
+                if (e.target.nodeName === "LI") {
+                    const contents = e.target.innerHTML;
+                    alert(contents);
+                }
+            });
+            const menu = document.querySelector(".menu-container");
+            menu.addEventListener("click", (e) => {
+                console.log(e.target.nodeName);
+                if (e.target.nodeName === "BUTTON") {
+                    const contents = e.target.innerHTML;
+                    alert(contents);
+                }
+                // const clickContent = e.target.innerHTML;
+                // alert(clickContent);
+            });
+            //const btns = document.querySelectorAll("button");
+            // btns[0].addEventListener("click", function (event) {
+            // console.log("target:", event.target);
+            // console.log("ctarget:", event.currentTarget);
+            // console.log("this:", this);
+            // });
+            // btns[0].addEventListener("click", (e) => {
+            //     const content = e.currentTarget.innerHTML;
+            //     alert(content);
+            // });
+            // btns[1].addEventListener("click", (event) => {
+            //     console.log("target:", event.target);
+            //     console.log("ctarget:", event.currentTarget);
+            //     console.log("this:", this);
+            // });
+        </script>
+    </body>
+</html>

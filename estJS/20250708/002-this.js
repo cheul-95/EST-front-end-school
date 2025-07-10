@@ -87,12 +87,10 @@ class Friends2 {
     constructor(name) {
         this.name = name;
     }
-
     sayHello() {
         console.log(`Hello, ${this.name}`);
     }
 }
-
 const friend3 = new Friends2("빙키");
 console.log(friend3.name);
 

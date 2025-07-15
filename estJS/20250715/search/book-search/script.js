@@ -9,10 +9,11 @@ const $searchInput = document.getElementById("search-input");
 // TODO 1: 책 검색 함수 구현
 async function searchBooks() {
     // 검색어 가져오기
-    const input = $searchInput.value;
+    const input = $searchInput.value.trim();
     // 빈 검색어 확인
     if (input === "") {
         alert("검색어를 작성 해주세요");
+        $searchInput.focus();
         return;
     }
     // API 호출
@@ -20,7 +21,7 @@ async function searchBooks() {
         // fetch를 사용해서 API 호출하기
         const params = {
             target: "title",
-            query: input,
+            query: encodeURIComponent(input),
             size: 20,
         };
         const queryString = new URLSearchParams(params).toString();
@@ -42,7 +43,6 @@ async function searchBooks() {
         if (data.documents.length === 0) {
             $bookList.innerHTML = "<li>검색 결과가 없습니다.</li>";
             $bookList.style.gridTemplateColumns = "unset";
-
             return;
         } else {
             $bookList.style.gridTemplateColumns =

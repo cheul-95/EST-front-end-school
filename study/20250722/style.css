@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    color: #1a1a1a;
+}
+#vclip-list li a {
+    position: relative;
+}
+#vclip-list li {
+    display: flex;
+    background-color: #f5f7fa;
+}
+#vclip-list img:first-child {
+    object-fit: cover;
+    width: 20vw;
+    height: 100%;
+}
+#vclip-list div {
+    padding: 2vh 2vw;
+    width: 100%;
+    max-width: 800px;
+}
+.date {
+    border-top: 1px solid #89939e;
+    margin-top: 5vw;
+    padding-top: 10px;
+    width: 100%;
+}
+h2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* 2줄까지만 표시 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.playButton {
+    position: absolute;
+    width: 5vw;
+    left: 7.5vw;
+    top: calc(50% - 2.5vw);
+}
+#search-container {
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#search-input {
+    flex-grow: 1;
+    max-width: 500px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+#search-button:hover {
+    background-color: #cc0000;
+}
+
+#vclip-list {
+    list-style: none;
+    padding: 20px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    max-width: 1200px;
+    /* YouTube 레이아웃과 유사하게 */
+}
+
+.vclip-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.vclip-thumbnail-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 비율 유지 */
+    overflow: hidden;
+}
+
+.vclip-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.vclip-playtime {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.vclip-info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.vclip-title {
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.vclip-title a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.vclip-title a:hover {
+    color: #030303;
+}
+
+.vclip-author,
+.vclip-datetime {
+    font-size: 0.9em;
+    color: #606060;
+    margin: 2px 0;
+}
+
+#loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #888;
+    display: none;
+    /* 초기에는 숨김 */
+}
+
+#observer-target {
+    height: 10px;
+    /* 보이지 않는 타겟 요소 */
+    background-color: transparent;
+}
+@media screen and (max-width: 768px) {
+    * {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .date {
+        margin-top: 0vh;
+        border: 0;
+    }
+}

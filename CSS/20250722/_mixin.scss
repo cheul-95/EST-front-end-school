@@ -1,0 +1,75 @@
+@mixin button-style($bg-color, $text-color, $padding) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $padding;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-style1 {
+    @include button-style(#007bff, white, 10px 20px);
+}
+.btn-style2 {
+    @include button-style(#6c757d, white, 8px 16px);
+}
+
+@mixin responsive-font($mobile, $tablet, $desk) {
+    font-size: $mobile;
+    @media screen and (min-width: 768px) {
+        font-size: $tablet;
+    }
+    @media screen and (min-width: 1024px) {
+        font-size: $desk;
+    }
+}
+.title {
+    @include responsive-font(18px, 24px, 32px);
+}
+.subtitle {
+    @include responsive-font(14px, 18px, 22px);
+}
+
+%card-frame {
+    padding: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.premium-card {
+    background: #2c2c2c;
+    color: white;
+    border-color: #ffd700;
+    position: relative;
+}
+
+.featured-card {
+    border-top: 4px solid #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+    position: relative;
+    padding-top: 32px;
+}
+
+@function responsive-grid-width($col, $device: "desktop") {
+    @if ($device == "mobile") {
+        @if $col > 6 {
+            @return 100%;
+        }
+        @if $col > 3 {
+            @return 50%;
+        }
+    }
+    @return percentage($col/ 12);
+}
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: responsive-grid-width($i);
+
+        float: left;
+
+        @media (max-width: 768px) {
+            width: responsive-grid-width($i, "mobile");
+        }
+    }
+}

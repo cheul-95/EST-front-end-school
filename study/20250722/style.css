@@ -44,6 +44,9 @@ h2 {
     left: 7.5vw;
     top: calc(50% - 2.5vw);
 }
+.playButton:hover {
+    transform: scale(1.2);
+}
 #search-container {
     padding: 15px 20px;
     background-color: #fff;

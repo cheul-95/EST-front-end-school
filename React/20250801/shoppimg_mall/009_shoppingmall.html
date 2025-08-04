@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <title></title>
+        <link rel="stylesheet" href="style/reset.css" />
+        <link rel="stylesheet" href="style/style.css" />
     </head>
     <body>
         <div id="root"></div>
@@ -13,36 +15,40 @@
             fetch("https://dev.wenivops.co.kr/services/fastapi-crud/1/product")
                 .then((response) => response.json())
                 .then((data) => {
-                    function Card(props) {
-                        let productName = "제품명 없음";
-                        let price = "가격 없음";
-                        props.productName
-                            ? (productName = props.productName)
-                            : (productName = props.children.productName);
-                        props.price ? (price = props.price) : (price = props.children.price);
+                    console.log(data);
 
+                    function Card({ title, price, imageUrl }) {
+                        console.log({ title, price, imageUrl });
                         return (
-                            <div>
-                                <h2>{productName}</h2>
+                            <div className="product-item">
+                                <h2>{title}</h2>
+                                <img src={imageUrl} alt="" />
                                 <p>{price}</p>
                             </div>
                         );
                     }
 
                     {
-                        /* Card 컴포넌트에 콘텐츠로 전달하는 방법 */
+                        /* 1. Card 컴포넌트에 콘텐츠로 전달하는 방법 */
                     }
                     {
-                        /* (가장 많이 사용) Card 컴포넌트에 속성으로 전달하는 방법 */
+                        /* 2. (가장 많이 사용) Card 컴포넌트에 속성으로 전달하는 방법 */
                     }
                     {
-                        /* Card 컴포넌트를 중괄호 안에 넣어 자바스크립트처럼 사용하는 방법 */
+                        /* 3. Card 컴포넌트를 중괄호 안에 넣어 자바스크립트처럼 사용하는 방법 */
                     }
+                    {
+                        /*    3번 방법은 008.html에 {Test2('hello world')} 코드 참고 */
+                    }
+
                     const app = (
                         <div>
-                            <Card>{data[0]}</Card>
-                            <Card productName={data[0].productName} price={data[0].price} />
-                            {Card(data[0])}
+                            {Card({ title: data[0].productName, price: data[0].price, imageUrl: data[0].thumbnailImg })}
+                            {Card({ title: data[1].productName, price: data[1].price, imageUrl: data[1].thumbnailImg })}
+                            {Card({ title: data[2].productName, price: data[2].price, imageUrl: data[2].thumbnailImg })}
+                            {Card({ title: data[3].productName, price: data[3].price, imageUrl: data[3].thumbnailImg })}
+                            {Card({ title: data[4].productName, price: data[4].price, imageUrl: data[4].thumbnailImg })}
+                            {Card({ title: data[5].productName, price: data[5].price, imageUrl: data[5].thumbnailImg })}
                         </div>
                     );
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>리덕스를 사용해서 상태 관리하기기</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+        <style>
+            .container {
+                border: 5px solid black;
+                margin: 10px;
+            }
+            .box {
+                width: calc(33.33% - 30px);
+                height: 150px;
+                margin: 10px;
+                display: inline-block;
+                border: 3px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <input type="text" id="text-input" />
+            <button type="button" onclick="handleTextChange();">Click Me!</button>
+            <button type="button" onclick="handleRadiusChange('10px');">Rounded!</button>
+            <button type="button" onclick="handleRadiusChange('15px');">Circle!</button>
+            <button type="button" onclick="handleRadiusChange('0px');">Rect!</button>
+            <button type="button" onclick="handleColorChange('red');">Red!</button>
+            <button type="button" onclick="handleColorChange('green');">Green!</button>
+            <button type="button" onclick="handleColorChange('blue');">Blue!</button>
+        </div>
+        <div class="container" id="text-component">
+            <div id="box-1" class="box"></div>
+            <div id="box-2" class="box"></div>
+            <div id="box-3" class="box"></div>
+            <div id="box-4" class="box"></div>
+            <div id="box-5" class="box"></div>
+            <div id="box-6" class="box"></div>
+        </div>
+        <script>
+            const reducer = (state, action) => {
+                if (state === undefined) {
+                    return {
+                        text: "",
+                    };
+                }
+                switch (action.type) {
+                    case "CHANGE_TEXT":
+                        return {
+                            ...state,
+                            text: action.text,
+                        };
+                    case "CHANGE_RADIUS":
+                        return {
+                            ...state,
+                            radius: action.radius,
+                        };
+                    case "CHANGE_COLOR":
+                        return {
+                            ...state,
+                            color: action.color,
+                        };
+                    default:
+                        return state;
+                }
+            };
+
+            const store = Redux.createStore(
+                reducer,
+                window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+            );
+
+            const changeTextAction = (text) => {
+                return {
+                    type: "CHANGE_TEXT",
+                    text: text,
+                };
+            };
+            const changeRadiusAction = (radius) => {
+                return {
+                    type: "CHANGE_RADIUS",
+                    radius: radius,
+                };
+            };
+            const changeColorAction = (color) => {
+                return {
+                    type: "CHANGE_COLOR",
+                    color: color,
+                };
+            };
+
+            const render = () => {
+                const state = store.getState();
+                for (let i = 1; i <= 6; i++) {
+                    const box = document.getElementById(`box-${i}`);
+                    if (box) {
+                        box.textContent = state.text;
+                        box.style.borderRadius = state.radius;
+                        box.style.borderColor = state.color;
+                    }
+                }
+            };
+            const handleTextChange = () => {
+                const text = document.getElementById("text-input").value;
+                store.dispatch(changeTextAction(text));
+            };
+            const handleRadiusChange = (radius) => {
+                store.dispatch(changeRadiusAction(radius));
+            };
+            const handleColorChange = (color) => {
+                store.dispatch(changeColorAction(color));
+            };
+
+            store.subscribe(render);
+            render();
+        </script>
+    </body>
+</html>

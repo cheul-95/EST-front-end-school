@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+        <style>
+            button.active {
+                background-color: red;
+                color: white;
+            }
+            .listing {
+                border: 3px solid #ddd;
+                margin: 10px 0;
+                padding: 15px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Redux Airbnb 필터링</h1>
+        <div>
+            <h2>편의시설 필터 :</h2>
+            <div id="filter-list"></div>
+            <div>활성화 필터 : <span id="active-filters"></span></div>
+            <div id="filter-results"></div>
+        </div>
+    </body>
+    <script>
+        const filterList = ["무료 주차 공간", "대형 욕조", "바베큐 그릴", "게스트용 별채", "수영장", "주방", "TV"];
+        document.querySelector("#filter-list").innerHTML = filterList
+            .map((item) => `<button class="filter-button" onclick="handleFilterClick('${item}')">${item}</button>`)
+            .join("");
+
+        const Airbnb = [
+            {
+                id: 1,
+                name: "바다뷰 펜션 - 해운대",
+                price: "120,000원",
+                Amenities: ["바베큐 그릴", "주방", "무료 주차 공간"],
+            },
+            {
+                id: 2,
+                name: "산속 별장 - 평창",
+                price: "95,000원",
+                Amenities: ["바베큐 그릴", "게스트용 별채", "무료 주차 공간", "TV"],
+            },
+            {
+                id: 3,
+                name: "리조트 빌라 - 제주도",
+                price: "200,000원",
+                Amenities: ["수영장", "대형 욕조", "바베큐 그릴", "무료 주차 공간", "주방", "TV"],
+            },
+            { id: 4, name: "한옥 스테이 - 전주", price: "85,000원", Amenities: ["주방", "무료 주차 공간", "TV"] },
+            {
+                id: 5,
+                name: "모던 아파트 - 강남",
+                price: "150,000원",
+                Amenities: ["주방", "무료 주차 공간", "TV", "게스트용 별채"],
+            },
+            {
+                id: 6,
+                name: "펜트하우스 - 송도",
+                price: "280,000원",
+                Amenities: ["수영장", "대형 욕조", "주방", "무료 주차 공간", "TV", "바베큐 그릴"],
+            },
+            { id: 7, name: "캠핑장 글램핑 - 가평", price: "70,000원", Amenities: ["바베큐 그릴", "무료 주차 공간"] },
+            { id: 8, name: "도심 속 원룸 - 홍대", price: "60,000원", Amenities: ["주방", "TV"] },
+            {
+                id: 9,
+                name: "레이크뷰 펜션 - 춘천",
+                price: "110,000원",
+                Amenities: ["바베큐 그릴", "주방", "무료 주차 공간", "TV", "대형 욕조"],
+            },
+            {
+                id: 10,
+                name: "스카이라운지 - 해운대",
+                price: "180,000원",
+                Amenities: ["수영장", "주방", "무료 주차 공간", "TV", "게스트용 별채"],
+            },
+            {
+                id: 11,
+                name: "전원주택 - 양평",
+                price: "90,000원",
+                Amenities: ["바베큐 그릴", "주방", "무료 주차 공간", "대형 욕조"],
+            },
+            {
+                id: 12,
+                name: "오션뷰 콘도 - 속초",
+                price: "130,000원",
+                Amenities: ["주방", "무료 주차 공간", "TV", "바베큐 그릴"],
+            },
+        ];
+    </script>
+    <script>
+        const handleFilterClick = (filter) => {
+            const current = store.getState().activeFilter;
+            if (current != undefined && current.includes(filter)) {
+                store.dispatch(changeActiveFilterAction(current.filter((item) => item !== filter)));
+            } else {
+                store.dispatch(changeActiveFilterAction([...current, filter]));
+            }
+            const AirbnbFiltered = Airbnb.filter((item) =>
+                store.getState().activeFilter.every((f) => item.Amenities.includes(f))
+            );
+            store.dispatch(changeFilterAction(AirbnbFiltered));
+        };
+        const reducer = (state, action) => {
+            if (state === undefined) {
+                return {
+                    activeFilter: [],
+                    filter: Airbnb,
+                    filterCount: 12,
+                };
+            }
+            switch (action.type) {
+                case "ACTIVE_FILTER_LIST":
+                    return {
+                        ...state,
+                        activeFilter: action.activeFilter,
+                    };
+                case "FILTER":
+                    return {
+                        ...state,
+                        filter: action.filter,
+                    };
+                default:
+                    return state;
+            }
+        };
+        const store = Redux.createStore(
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        );
+
+        const changeActiveFilterAction = (filterList) => {
+            return {
+                type: "ACTIVE_FILTER_LIST",
+                activeFilter: filterList,
+            };
+        };
+        const changeFilterAction = (filter) => {
+            return {
+                type: "FILTER",
+                filter: filter,
+            };
+        };
+
+        const render = () => {
+            const state = store.getState();
+            const box = document.getElementById(`active-filters`);
+            box.textContent =
+                (state.activeFilter.length === 0 ? "필터 없음" : state.activeFilter.join(", ")) +
+                    " | 결과 : " +
+                    state.filter.length +
+                    "개 숙소" || "없음 | 결과 : 12개 숙소";
+
+            document.getElementById("filter-results").innerHTML = state.filter
+                .map(
+                    (item) =>
+                        `<div class="listing"><h3>${item.name}</h3><p>가격: ${
+                            item.price
+                        }</p><p>편의시설: ${item.Amenities.map(
+                            (amenity) => `<button class="filter-button">${amenity}</button>`
+                        ).join("")}</p></div>`
+                )
+                .join("");
+            document.querySelectorAll(".filter-button").forEach((btn) => {
+                const filterText = btn.textContent.trim();
+                btn.classList.toggle("active", state.activeFilter.includes(filterText));
+            });
+        };
+
+        store.subscribe(render);
+        render();
+    </script>
+</html>

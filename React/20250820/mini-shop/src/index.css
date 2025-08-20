@@ -1,0 +1,62 @@
+header {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+header a {
+    margin: 0 1rem;
+}
+
+main {
+    padding: 1rem;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+.product-list li {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.product-list article {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.product-list article button {
+    width: 200px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.product-list article button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+.cart-items li {
+    padding: 1rem 0rem;
+    border-bottom: 1px dotted #ccc;
+}
+
+.cart-items button,
+.all-remove {
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}

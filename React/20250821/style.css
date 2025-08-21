@@ -1,0 +1,143 @@
+@font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Pretendard-Bold";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+body {
+    height: 100%;
+    background: radial-gradient(96.74% 276.79% at 3.59% 5.28%, #f0f4ff 0%, #a5b6ee 100%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.weniv-logo {
+    width: 244px;
+    height: 48px;
+    margin-top: 72px;
+}
+
+.timer {
+    width: 400px;
+    height: 360px;
+    margin-top: 60px;
+    border-radius: 16px;
+    box-shadow: 20px 20px 60px 10px #374b7c66;
+    background: linear-gradient(144.07deg, #5572bb 2.13%, #374b7c 102.97%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.timer-title {
+    font-family: "Pretendard-Bold", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+
+    color: #ffffff;
+    padding-top: 48px;
+}
+.divider1 {
+    width: 312px;
+    height: 1px;
+    display: block;
+    background: #3d538a;
+    margin-top: 23px;
+}
+.divider2 {
+    width: 312px;
+    height: 1px;
+    display: block;
+    background: #5b75b4;
+}
+.timer-divider {
+    background: url("./images/dot.png") no-repeat;
+    width: 6px;
+    height: 26px;
+    margin: 0 8px;
+    margin-top: 12px;
+}
+
+.timer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+}
+.timer-number {
+    background: url("./images/box.png") no-repeat;
+    width: 80px;
+    height: 80px;
+    border: none;
+    color: #ffffff;
+    font-family: "Pretendard-Bold", sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+.timer-items-title {
+    font-family: "Pretendard-Bold", sans-serif;
+    font-size: 12px;
+    color: #a5b6ee;
+    text-align: center;
+    margin-bottom: 4px;
+    display: block;
+}
+.timer-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 40px;
+}
+.timer-button {
+    width: 112px;
+    height: 48px;
+    border-radius: 50px;
+}
+.timer-button.start {
+    background: url("./images/start-default.png") no-repeat;
+}
+.timer-button.start:disabled {
+    display: block;
+    background: url("./images/start-disabled.png") no-repeat;
+}
+.timer-button.reset {
+    background: url("./images/reset-default.png") no-repeat;
+}
+.timer-button.reset:disabled {
+    display: block;
+    background: url("./images/reset-disabled.png") no-repeat;
+}
+.timer-button.pause {
+    display: none;
+    background: url("./images/pause.png") no-repeat;
+}
+.footer-content {
+    margin-top: 60px;
+    padding-bottom: 103px;
+    font-family: "Pretendard-Regular", sans-serif;
+    font-size: 14px;
+    color: #8596bf;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

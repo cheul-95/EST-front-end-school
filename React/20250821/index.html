@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>위니브 타이머</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./reset.css" />
+    </head>
+    <body>
+        <header>
+            <a href="/">
+                <img src="./images/weniv-logo.svg" alt="위니브 타이머" class="weniv-logo" />
+                <h1 class="sr-only">위니브 타이머</h1>
+            </a>
+        </header>
+        <main>
+            <div class="timer">
+                <h2 class="timer-title">TIMER</h2>
+                <span class="divider1" aria-hidden="true"></span>
+                <span class="divider2" aria-hidden="true"></span>
+                <section class="timer-content">
+                    <div class="timer-items">
+                        <label class="timer-items-title" for="hrs">HRS</label>
+                        <input type="number" min="0" class="timer-number" id="hrs" value="00" />
+                    </div>
+                    <span class="timer-divider" aria-hidden="true"></span>
+                    <div class="timer-items">
+                        <label class="timer-items-title" for="mins">MINS</label>
+                        <input type="number" min="0" max="59" class="timer-number" id="mins" value="00" />
+                    </div>
+                    <span class="timer-divider" aria-hidden="true"></span>
+                    <div class="timer-items">
+                        <label class="timer-items-title" for="sec">SEC</label>
+                        <input type="number" min="0" max="59" class="timer-number" id="sec" value="00" />
+                    </div>
+                </section>
+                <section class="timer-buttons">
+                    <button type="button" class="timer-button start" disabled></button>
+                    <button type="button" class="timer-button pause"></button>
+                    <button type="button" class="timer-button reset" disabled></button>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">ⓒ WENIV Corp.</div>
+        </footer>
+    </body>
+    <script src="./script.js"></script>
+</html>
